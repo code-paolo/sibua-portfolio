@@ -134,49 +134,6 @@ export const portfolioData = {
       liveUrl: "https://movie-ticketing-system-tau.vercel.app/",
       mvp: true,
     },
-    {
-      title: "Task Management Platform",
-      subtitle: "Real-time Collaboration Tool",
-      status: "Completed",
-      problem:
-        "Teams needed a scalable solution for real-time task management with drag-and-drop functionality.",
-      solution:
-        "Built a full-stack collaborative platform with real-time synchronization, intuitive UI, and enterprise-grade scalability.",
-      impact: [
-        "Supports 1000+ concurrent users without performance degradation",
-        "Real-time updates ensure team-wide synchronization",
-        "Reduced task assignment time by 70%",
-      ],
-      highlights: [
-        "Drag-and-drop task organization",
-        "Real-time collaboration with WebSocket integration",
-        "Scalable microservices architecture",
-      ],
-      technologies: ["React", "Node.js", "MongoDB", "Socket.io"],
-      githubUrl: "https://github.com",
-    },
-    {
-      title: "Weather Dashboard",
-      subtitle: "Interactive Weather Visualization",
-      status: "Completed",
-      problem:
-        "Users needed a unified platform to view weather data from multiple sources with interactive visualizations.",
-      solution:
-        "Created a responsive dashboard integrating multiple weather APIs with real-time updates and interactive maps.",
-      impact: [
-        "Aggregates data from 3+ weather APIs for accuracy",
-        "Real-time updates every 5 minutes",
-        "Mobile-first responsive design",
-      ],
-      highlights: [
-        "Multi-API integration for comprehensive data",
-        "Interactive map visualization",
-        "7-day forecast with hourly breakdowns",
-      ],
-      technologies: ["React", "TailwindCSS", "Weather API"],
-      githubUrl: "https://github.com",
-      liveUrl: "https://example.com",
-    },
   ],
 
   experience: [

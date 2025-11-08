@@ -196,11 +196,6 @@ export const portfolioData = {
       company: "HTML, CSS, JavaScript",
     },
     {
-      year: "2023",
-      title: "Mastered Modern Frameworks",
-      company: "ReactJS, NextJS, Laravel",
-    },
-    {
       year: "Nov 2024 - Mar 2025",
       title: "IT Operations Intern",
       company: "Concentrix Cyberwest",

@@ -160,8 +160,8 @@ This project is open source and available under the MIT License.
 ## 🤝 Connect
 
 - **Email**: paolo.sibua@example.com
-- **LinkedIn**: [linkedin.com/in/paolo-sibua](https://linkedin.com/in/paolo-sibua)
-- **GitHub**: [github.com/paolo-sibua](https://github.com/paolo-sibua)
+- **LinkedIn**: [https://www.linkedin.com/in/paolo-sibua-268309222/](https://www.linkedin.com/in/paolo-sibua-268309222/)
+- **GitHub**: [https://github.com/code-paolo](https://github.com/code-paolo)
 
 ---
 

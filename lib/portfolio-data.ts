@@ -191,6 +191,13 @@ export const portfolioData = {
       company: "Wrote my first line of code",
     },
     {
+      year: "2021",
+      title: "Transferred to another university",
+      company: "National University - Baliwag",
+      description:
+        "Bachelor of Information Technology with Specialization in Mobile and Web Application",
+    },
+    {
       year: "Nov 2024 - Mar 2025",
       title: "IT Operations Intern",
       company: "Concentrix Cyberwest",

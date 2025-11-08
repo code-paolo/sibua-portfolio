@@ -130,8 +130,8 @@ export const portfolioData = {
         "Vite",
         "Node.js",
       ],
-      githubUrl: "",
-      liveUrl: "",
+      githubUrl: "https://github.com/code-paolo/movie-ticketing-system",
+      liveUrl: "https://movie-ticketing-system-tau.vercel.app/",
       mvp: true,
     },
     {

@@ -191,11 +191,6 @@ export const portfolioData = {
       company: "Wrote my first line of code",
     },
     {
-      year: "2022",
-      title: "Built First Web Application",
-      company: "HTML, CSS, JavaScript",
-    },
-    {
       year: "Nov 2024 - Mar 2025",
       title: "IT Operations Intern",
       company: "Concentrix Cyberwest",
@@ -208,6 +203,13 @@ export const portfolioData = {
       company: "Knowles Training Institute",
       description:
         "Website design, content optimization, SEO, and responsive UX",
+    },
+    {
+      year: "Aug 2025",
+      title: "Graduated",
+      company: "National University - Baliwag",
+      description:
+        "Bachelor of Information Technology with Specialization in Mobile and Web Application",
     },
     {
       year: "2025+",

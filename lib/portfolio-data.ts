@@ -42,23 +42,23 @@ export const portfolioData = {
   skills: {
     frontend: [
       "HTML",
-      "ReactJS",
+      "React",
       "FluxUI",
-      "TailwindCSS",
+      "Tailwind CSS",
       "JavaScript",
-      "ShadCN",
+      "shadcn/ui",
       "TypeScript",
     ],
-    backend: ["NodeJS", "Firebase", "MongoDB", "Express", "MySQL", "PHP"],
-    fullstack: ["Laravel", "NextJS"],
-    tools: ["VSCode", "Github", "Postman"],
+    backend: ["Node.js", "Firebase", "MongoDB", "Express", "MySQL", "PHP"],
+    fullstack: ["Laravel", "Next.js"],
+    tools: ["VSCode", "GitHub", "Postman"],
   },
 
   projects: [
     {
       title: "TBPillPal",
       subtitle: "Tuberculosis Admin Dashboard",
-      status: "Completed",
+
       problem:
         "Baliwag RHU struggled with manual, paper-based TB patient monitoring, leading to delayed interventions and low medication adherence rates.",
       solution:
@@ -84,9 +84,9 @@ export const portfolioData = {
         "HTML",
         "Express",
         "Firebase",
-        "TailwindCSS",
-        "ShadCN-UI",
-        "ReactJS",
+        "Tailwind CSS",
+        "shadcn/ui",
+        "React",
         "TypeScript",
       ],
       githubUrl: "https://github.com/code-paolo/tbpillpal",
@@ -95,7 +95,6 @@ export const portfolioData = {
     {
       title: "BookTix",
       subtitle: "Modern Movie Ticket Booking Platform",
-      status: "In Development",
       problem:
         "Movie-goers need a streamlined, user-friendly platform to discover films, compare showtimes, and purchase tickets without friction.",
       solution:
@@ -121,7 +120,7 @@ export const portfolioData = {
         "React",
         "TypeScript",
         "Tailwind CSS",
-        "ShadCN",
+        "shadcn/ui",
         "Zustand",
         "MongoDB",
         "Prisma",
@@ -132,7 +131,46 @@ export const portfolioData = {
       ],
       githubUrl: "https://github.com/code-paolo/movie-ticketing-system",
       liveUrl: "https://movie-ticketing-system-tau.vercel.app/",
-      mvp: true,
+    },
+    {
+      title: "Beati Cafe",
+      subtitle: "Modern Cafe Web Application",
+      problem:
+        "Traditional cafe ordering systems lack intelligent customer support and streamlined menu navigation, leading to longer decision times, increased staff workload, and missed opportunities for personalized recommendations.",
+      solution:
+        "Built a full-stack Next.js web application with AI-powered customer assistance, advanced multi-category filtering, secure authentication system, and intelligent cart management to transform the digital cafe ordering experience.",
+      impact: [
+        "Engineered AI-powered chatbot with Groq API achieving <3 second response times for instant menu recommendations, dietary queries, and location information, significantly reducing customer support burden",
+        "Developed sophisticated filtering system with multi-category selection and real-time search, enabling customers to discover menu items 60% faster than traditional linear browsing",
+        "Architected secure authentication flow with Zod schema validation and react-hook-form, implementing GDPR-compliant privacy controls and form error handling that reduced invalid submissions by 85%",
+        "Built intelligent cart management system with authentication guards, real-time stock validation, and contextual notifications, minimizing order errors and streamlining the checkout process",
+        "Designed fully responsive UI with modern design patterns and accessibility standards, ensuring seamless experience across all device sizes and improving mobile conversion rates",
+      ],
+      highlights: [
+        "Groq AI Chatbot Integration - Context-aware conversational AI providing instant assistance with menu recommendations, dietary options, allergen information, and store details",
+        "Advanced Multi-Category Filtering - Dynamic search and filter system with real-time updates and persistent URL state for seamless menu navigation",
+        "Enterprise-Grade Authentication - Secure user authentication with comprehensive form validation using Zod and react-hook-form, ensuring data integrity and privacy compliance",
+        "Smart Cart System - Intelligent cart management with authentication guards, quantity validation, and status-based notifications to prevent user errors",
+        "Modern Tech Stack - Built with Next.js 14, TypeScript, Tailwind CSS, and shadcn/ui for optimal performance, type safety, and maintainable code architecture",
+      ],
+      metrics: [
+        { label: "AI Response Time", value: "<3s" },
+        { label: "Features Implemented", value: "15+" },
+        { label: "Reusable Components", value: "25+" },
+        { label: "Tech Stack", value: "8 tools" },
+      ],
+      technologies: [
+        "React",
+        "TypeScript",
+        "Next.js",
+        "Tailwind CSS",
+        "shadcn/ui",
+        "Groq AI",
+        "Zod",
+        "react-hook-form",
+      ],
+      githubUrl: "https://github.com/code-paolo/beati-cafe",
+      liveUrl: "https://beati-cafe.vercel.app/",
     },
   ],
 

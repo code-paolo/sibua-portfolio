@@ -54,31 +54,10 @@ export function ProjectsSection() {
 
                   {/* Badges Container */}
                   <div className="flex items-center gap-2 shrink-0">
-                    {/* MVP Badge */}
-                    {project.mvp && (
-                      <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-secondary text-secondary-foreground shadow">
-                        🚀 MVP
-                      </span>
-                    )}
-
                     {/* Capstone Badge */}
                     {project.featured && (
                       <span className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-bold bg-primary text-primary-foreground shadow-lg">
                         🏆 Capstone
-                      </span>
-                    )}
-
-                    {/* Status Badge */}
-                    {project.status && (
-                      <span
-                        className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold whitespace-nowrap ${
-                          project.status === "In Development"
-                            ? "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-100"
-                            : "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-100"
-                        }`}
-                      >
-                        {project.status === "In Development" ? "🚧" : "✓"}{" "}
-                        {project.status}
                       </span>
                     )}
                   </div>

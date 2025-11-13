@@ -65,7 +65,6 @@ export function PortfolioChatbot() {
         projectDetails.push(`GitHub: ${p.githubUrl || "N/A"}`);
         if (p.liveUrl) projectDetails.push(`Live Demo: ${p.liveUrl}`);
         if (p.featured) projectDetails.push("Type: Capstone Project");
-        if (p.mvp) projectDetails.push("Type: MVP");
         return projectDetails.join(" | ");
       })
       .join("\n\n");

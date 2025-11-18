@@ -56,8 +56,8 @@ export function AboutSection() {
               >
                 <Link
                   className=" w-32"
-                  href="/Sibua_Resume_11-2025.pdf"
-                  download="Sibua_Resume_11-2025.pdf"
+                  href="/Sibua_Resume_2025-11-14-25.pdf"
+                  download="Sibua_Resume_2025-11-14-25.pdf"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

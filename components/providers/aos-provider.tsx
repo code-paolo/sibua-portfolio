@@ -11,8 +11,8 @@ interface AosProviderProps {
 export function AosProvider({ children }: AosProviderProps) {
   useEffect(() => {
     AOS.init({
-      duration: 800,
-      easing: "ease-in-out",
+      duration: 400,
+      easing: "ease-out",
       once: true,
       offset: 50,
       delay: 0,

@@ -182,29 +182,53 @@ export const portfolioData = {
       title: "App Developer",
       company: "Coral System Technologies Inc.",
       current: true,
-      description:
-        "Developed real-time features with Laravel Broadcasting, Echo, and Reverb in Docker; contributed to HRIS modules; implemented multitenant RBAC; wrote Laravel Pest tests; and delivered 20+ pull requests through GitLab workflows.",
+      description: [
+        "Engineered real-time communication features using Laravel Broadcasting, Echo, and Reverb within containerized Docker environments.",
+        "Drove development of core HRIS modules, focusing on system enhancements and optimized workflows.",
+        "Crafted a library of reusable UI components using ShadCN and Vue.js to ensure interface consistency.",
+        "Architected multitenant security layers with robust RBAC using Laravel Spatie Permissions.",
+        "Enhanced system reliability by implementing automated unit testing suites with Laravel Pest.",
+        "Streamlined business logic through the Repository Pattern, ensuring a clean and maintainable codebase.",
+        "Facilitated Agile delivery through iterative development and active participation in continuous feedback loops.",
+        "Orchestrated GitLab workflows, including strategic branching, merge request management, and peer code reviews.",
+        "Leveraged CI/CD pipelines and Linux CLI for efficient Docker management and deployment tasks.",
+        "Successfully delivered 20+ pull requests spanning complex UI/UX and backend performance upgrades."
+      ],
     },
     {
       year: "Apr 2025 - Jul 2025",
-      title: "WordPress Website Development Intern",
+      title: "WordPress Development Intern",
       company: "Knowles Training Institute",
-      description:
-        "Designed and maintained user-friendly pages, optimized content and metadata for SEO, and improved navigation, accessibility, and responsiveness.",
+      description: [
+        "Modernized the institute's digital presence by designing intuitive, high-conversion web pages.",
+        "Transformed brand guidelines into creative, high-impact layouts in collaboration with the marketing team.",
+        "Curated and optimized service-oriented content and promotional materials for better visual storytelling.",
+        "Boosted cross-device accessibility and user engagement through responsive design improvements.",
+        "Executed SEO strategies by refining content structure and metadata to drive organic search rankings.",
+        "Maintained platform integrity through timely updates of course data and event schedules."
+      ],
     },
     {
       year: "Nov 2024 - Mar 2025",
-      title: "Information Technology Operations Intern",
+      title: "IT Operations Intern",
       company: "Concentrix Cyberwest",
-      description:
-        "Provided technical support for hardware, software, and network issues while administering IT systems and user accounts.",
+      description: [
+        "Resolved critical hardware, software, and network issues through dedicated technical support for end-users.",
+        "Administered secure IT systems and user accounts to maintain operational continuity.",
+        "Developed deep technical troubleshooting skills by managing server and network configurations."
+      ],
     },
     {
       year: "Sep 2024 - Dec 2024",
       title: "Software Development Lead",
-      company: "Google Developer Student Club - National University - Baliwag",
-      description:
-        "Led project planning, clarified requirements, facilitated planning meetings, and coordinated faculty/student collaboration.",
+      company: "GDSC - National University - Baliwag",
+      description: [
+        "Spearheaded student-led development projects by defining comprehensive scopes and strategic goals.",
+        "Translated university needs into actionable technical requirements and project objectives.",
+        "Facilitated high-level planning meetings to establish clear team responsibilities and delivery timelines.",
+        "Provided technical mentorship on documentation standards and software architecture.",
+        "Coordinated cross-functional efforts between faculty and student teams to ensure project alignment."
+      ],
     },
   ],
 };

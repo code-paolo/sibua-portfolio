@@ -170,38 +170,38 @@ ${projectsInfo}
       {!isOpen && (
         <Button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 rounded-full w-14 h-14 md:w-auto md:h-14 md:px-6 shadow-lg hover:shadow-xl transition-all hover:scale-105 md:gap-3"
+          className="fixed bottom-4 right-4 md:bottom-8 md:right-8 z-50 rounded-none w-14 h-14 md:w-auto md:h-14 md:px-6 shadow-2xl hover:scale-105 transition-all md:gap-3 bg-foreground text-background border-none group"
           size="lg"
         >
-          <MessageCircle className="w-6 h-6" />
-          <span className="hidden md:inline font-semibold">Chat with Paolo</span>
+          <MessageCircle className="w-6 h-6 group-hover:rotate-12 transition-transform" />
+          <span className="hidden md:inline font-bold uppercase tracking-widest text-xs">Chat with Paolo</span>
         </Button>
       )}
 
-      {/* Chat Window - Messenger Style */}
+      {/* Chat Window */}
       {isOpen && (
-        <Card className="fixed inset-0 md:inset-auto md:bottom-6 md:right-6 z-50 w-full md:w-[380px] h-[100dvh] md:h-[600px] max-h-screen md:rounded-2xl shadow-2xl flex flex-col overflow-hidden touch-none overscroll-none">
-            {/* Messenger-style Header with Profile */}
-          <div className="shrink-0 flex items-center gap-3 p-4 pt-[env(safe-area-inset-top)] border-b bg-background">
+        <Card className="fixed inset-0 md:inset-auto md:bottom-24 md:right-8 z-50 w-full md:w-[400px] h-[100dvh] md:h-[600px] max-h-screen rounded-none md:rounded-none shadow-2xl flex flex-col overflow-hidden touch-none overscroll-none border-2 border-foreground bg-card/95 backdrop-blur-xl">
+            {/* Header */}
+          <div className="shrink-0 flex items-center gap-3 p-6 pt-[calc(env(safe-area-inset-top)+1.5rem)] border-b-2 border-foreground bg-background">
               <div className="relative w-10 h-10 shrink-0">
                 <Image
                   src="/hero-img.webp"
                   alt="Paolo G. Sibua"
                   fill
-                  className="rounded-full object-cover"
+                  className="rounded-none object-cover object-center"
                   sizes="40px"
                 />
-                <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 rounded-full border-2 border-background" />
+                <div className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-green-500 rounded-none border-2 border-background" />
               </div>
               <div className="flex-1">
-                <h3 className="font-semibold text-sm">Paolo G. Sibua</h3>
-                <p className="text-xs text-muted-foreground">Active now</p>
+                <h3 className="font-bold text-sm tracking-tight uppercase">Paolo G. Sibua</h3>
+                <p className="text-[10px] text-muted-foreground uppercase tracking-widest font-bold">AI Assistant Online</p>
               </div>
               <Button
                 variant="ghost"
                 size="icon"
                 onClick={() => setIsOpen(false)}
-                className="shrink-0"
+                className="shrink-0 rounded-none hover:bg-muted"
               >
                 <X className="w-5 h-5" />
               </Button>
@@ -210,78 +210,82 @@ ${projectsInfo}
             {/* Messages */}
             <div 
               ref={chatContainerRef}
-              className="flex-1 min-h-0 overflow-y-auto p-4 space-y-3 bg-muted/20 flex flex-col"
+              className="flex-1 min-h-0 overflow-y-auto p-6 space-y-6 flex flex-col"
             >
-              {/* Show quick questions only if no messages besides initial greeting */}
-              {messages.length === 1 && (
-                <div className="space-y-2 mt-auto mb-auto">
-                  <p className="text-xs font-semibold text-muted-foreground px-2">Suggested Questions:</p>
-                  {[
-                    "What are your main projects?",
-                    "Tell me about TBPillPal",
-                    "What technologies do you use?",
-                    "What's your experience level?",
-                  ].map((question, idx) => (
-                    <button
-                      key={idx}
-                      onClick={() => {
-                        setInputValue(question);
-                        setTimeout(() => {
-                          const input = document.querySelector("textarea");
-                          if (input) input.focus();
-                        }, 0);
-                      }}
-                      className="w-full text-left text-sm p-3 rounded-lg bg-background border hover:border-primary hover:bg-primary/5 transition-all hover:scale-105 active:scale-95"
-                    >
-                      <span className="text-muted-foreground group-hover:text-primary">💬 {question}</span>
-                    </button>
-                  ))}
-                </div>
-              )}
-              
               {messages.map((msg, index) => (
                 <div
                   key={index}
-                  className={`flex gap-2 ${msg.role === "user" ? "justify-end" : "justify-start"}`}
+                  className={`flex gap-3 ${msg.role === "user" ? "justify-end" : "justify-start"}`}
                 >
                   {msg.role === "assistant" && (
-                    <div className="relative w-7 h-7 shrink-0 mt-auto">
+                    <div className="relative w-8 h-8 shrink-0 mt-auto mb-1">
                       <Image
                         src="/hero-img.webp"
                         alt="Paolo"
                         fill
-                        className="rounded-full object-cover"
-                        sizes="28px"
+                        className="rounded-none object-cover object-center"
+                        sizes="32px"
                       />
                     </div>
                   )}
                   <div
-                    className={`max-w-[75%] md:max-w-[80%] rounded-2xl px-4 py-2 ${
+                    className={`max-w-[85%] rounded-none px-5 py-3 border-2 ${
                       msg.role === "user"
-                        ? "bg-primary text-primary-foreground rounded-br-sm"
-                        : "bg-background border rounded-bl-sm"
+                        ? "bg-foreground text-background border-foreground"
+                        : "bg-muted/30 border-border"
                     }`}
                   >
-                    <p className="text-sm leading-relaxed whitespace-pre-wrap">{msg.content}</p>
+                    <p className="text-sm leading-relaxed whitespace-pre-wrap font-medium">
+                        {msg.content}
+                    </p>
                   </div>
                 </div>
               ))}
+
+              {/* Show quick questions only if no messages besides initial greeting */}
+              {messages.length === 1 && (
+                <div className="space-y-3 pt-6 mt-auto">
+                  <p className="text-[10px] font-bold text-muted-foreground px-2 uppercase tracking-widest mb-4">Suggested Queries</p>
+                  <div className="flex flex-col gap-2">
+                    {[
+                      "Tell me about your projects",
+                      "What is TBPillPal?",
+                      "What technologies do you use?",
+                      "View your experience",
+                    ].map((question, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => {
+                          setInputValue(question);
+                          setTimeout(() => {
+                            const input = document.querySelector("input");
+                            if (input) input.focus();
+                          }, 0);
+                        }}
+                        className="w-full text-left text-sm p-4 rounded-none bg-muted/30 border border-border hover:border-foreground hover:bg-muted/50 transition-all duration-200"
+                      >
+                        <span className="font-bold uppercase tracking-tight">{question}</span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
               {isLoading && (
-                <div className="flex gap-2 justify-start">
-                  <div className="relative w-7 h-7 shrink-0 mt-auto">
+                <div className="flex gap-3 justify-start">
+                  <div className="relative w-8 h-8 shrink-0 mt-auto mb-1">
                     <Image
                       src="/hero-img.webp"
                       alt="Paolo"
                       fill
-                      className="rounded-full object-cover"
-                      sizes="28px"
+                      className="rounded-lg object-cover"
+                      sizes="32px"
                     />
                   </div>
-                  <div className="bg-background border rounded-2xl rounded-bl-sm px-4 py-3">
-                    <div className="flex gap-1">
-                      <div className="w-2 h-2 bg-muted-foreground rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
-                      <div className="w-2 h-2 bg-muted-foreground rounded-full animate-bounce" style={{ animationDelay: "150ms" }} />
-                      <div className="w-2 h-2 bg-muted-foreground rounded-full animate-bounce" style={{ animationDelay: "300ms" }} />
+                  <div className="bg-muted/30 border border-border rounded-[1.5rem] rounded-bl-none px-5 py-4">
+                    <div className="flex gap-1.5">
+                      <div className="w-1.5 h-1.5 bg-foreground/40 rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
+                      <div className="w-1.5 h-1.5 bg-foreground/40 rounded-full animate-bounce" style={{ animationDelay: "150ms" }} />
+                      <div className="w-1.5 h-1.5 bg-foreground/40 rounded-full animate-bounce" style={{ animationDelay: "300ms" }} />
                     </div>
                   </div>
                 </div>
@@ -290,26 +294,26 @@ ${projectsInfo}
             </div>
 
             {/* Input */}
-            <div className="shrink-0 p-3 md:p-4 pb-[env(safe-area-inset-bottom)] border-t bg-background">
-              <div className="flex gap-2">
+            <div className="shrink-0 p-6 border-t border-border/50 bg-background/50 backdrop-blur-md">
+              <div className="flex gap-3">
                 <Input
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
                   onKeyPress={handleKeyPress}
-                  placeholder="Type a message..."
+                  placeholder="Ask me anything..."
                   disabled={isLoading}
-                  className="flex-1 rounded-full"
+                  className="flex-1 rounded-full border-border focus-visible:ring-1 focus-visible:ring-foreground h-12 px-6"
                 />
                 <Button 
                   onClick={handleSendMessage} 
                   disabled={isLoading || !inputValue.trim()} 
                   size="icon"
-                  className="rounded-full shrink-0"
+                  className="rounded-full shrink-0 h-12 w-12 bg-foreground text-background hover:bg-foreground/90 transition-transform hover:scale-105"
                 >
                   {isLoading ? (
-                    <Loader2 className="w-4 h-4 animate-spin" />
+                    <Loader2 className="w-5 h-5 animate-spin" />
                   ) : (
-                    <Send className="w-4 h-4" />
+                    <Send className="w-5 h-5" />
                   )}
                 </Button>
               </div>

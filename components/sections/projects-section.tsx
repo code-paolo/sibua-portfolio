@@ -114,7 +114,7 @@ export function ProjectsSection() {
                       {/* Technologies */}
                       <div className="flex flex-wrap gap-2">
                         {project.technologies.map((tech) => (
-                          <Badge key={tech} variant="secondary" className="font-medium">
+                          <Badge key={tech} variant="secondary" className="font-medium text-foreground">
                             {tech}
                           </Badge>
                         ))}
@@ -128,7 +128,7 @@ export function ProjectsSection() {
                         <ul className="space-y-3">
                           {project.impact.map((item, iIdx) => (
                             <li key={iIdx} className="flex gap-3 text-sm text-muted-foreground leading-relaxed">
-                              <CheckCircle2 className="w-5 h-5 text-primary/60 shrink-0" />
+                              <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
                               <span>{item}</span>
                             </li>
                           ))}
@@ -140,7 +140,7 @@ export function ProjectsSection() {
                         <h4 className="text-sm font-bold uppercase tracking-widest text-primary">Technical Highlights</h4>
                         <div className="flex flex-col gap-2">
                           {project.highlights.map((highlight, hIdx) => (
-                            <div key={hIdx} className="text-sm text-muted-foreground/80 font-medium py-2 px-4 bg-muted/20 rounded-xl border border-border/30">
+                            <div key={hIdx} className="text-sm text-muted-foreground font-medium py-2 px-4 bg-muted/20 rounded-xl border border-border">
                               {highlight}
                             </div>
                           ))}

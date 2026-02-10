@@ -43,7 +43,7 @@ export function EducationSection() {
                     </div>
 
                     <div className="pt-4 flex items-center justify-between">
-                      <span className="text-sm font-medium text-muted-foreground/80 bg-muted/50 px-4 py-1.5 rounded-full border border-border/50">
+                      <span className="text-sm font-medium text-muted-foreground bg-muted px-4 py-1.5 rounded-full border border-border">
                         {edu.period}
                       </span>
                       {edu.status && (

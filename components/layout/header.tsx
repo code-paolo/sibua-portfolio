@@ -13,9 +13,8 @@ export function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      setScrolled(window.scrollY > 20);
 
-      // Determine active section
       const sections = [
         "hero",
         "about",
@@ -51,14 +50,13 @@ export function Header() {
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
-    setMobileMenuOpen(false); // Close menu after clicking
+    setMobileMenuOpen(false);
   };
 
   const navItems = [
     { id: "hero", label: "Home" },
     { id: "about", label: "About" },
-    { id: "education", label: "Education" },
-    { id: "experience", label: "Journey" },
+    { id: "experience", label: "Experience" },
     { id: "projects", label: "Projects" },
     { id: "contact", label: "Contact" },
   ];
@@ -66,59 +64,48 @@ export function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 overflow-x-hidden ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? "bg-white/80 backdrop-blur-md shadow-sm dark:bg-black/80"
-            : "bg-transparent"
+            ? "bg-background/80 backdrop-blur-xl border-b border-border/40 py-4"
+            : "bg-transparent py-6"
         }`}
       >
-        <div className="flex items-center justify-between h-16 px-4 md:px-6">
-          {/* Logo */}
+        <div className="container mx-auto max-w-5xl flex items-center justify-between px-6">
           <Link
             href="/"
-            className="text-2xl font-bold hover:scale-110 transition-transform shrink-0"
+            className="text-xl font-black tracking-tighter hover:text-primary transition-colors"
           >
-            PGS
+            PGS<span className="text-primary">.</span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <ul className="hidden md:flex items-center space-x-8 flex-1 justify-center">
+          <nav className="hidden md:flex items-center gap-1">
             {navItems.map((item) => (
-              <li key={item.id}>
-                <button
-                  onClick={() => scrollToSection(item.id)}
-                  className="relative py-2 text-sm font-medium transition-colors group whitespace-nowrap"
-                >
-                  {item.label}
-                  <span
-                    className={`absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 ${
-                      activeSection === item.id
-                        ? "w-full"
-                        : "w-0 group-hover:w-full"
-                    }`}
-                  />
-                </button>
-              </li>
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className={`px-4 py-2 text-sm font-medium rounded-full transition-all duration-300 ${
+                  activeSection === item.id
+                    ? "text-primary bg-primary/10"
+                    : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                }`}
+              >
+                {item.label}
+              </button>
             ))}
-          </ul>
+            <div className="ml-4 pl-4 border-l border-border/50 flex items-center gap-2">
+              <ThemeToggle />
+            </div>
+          </nav>
 
-          {/* Right Side Controls */}
-          <div className="flex items-center gap-2 md:gap-4 shrink-0">
+          <div className="flex items-center gap-4 md:hidden">
             <ThemeToggle />
-
-            {/* Mobile Menu Button */}
             <Button
               variant="ghost"
               size="icon"
-              className="md:hidden"
+              className="rounded-full"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label="Toggle menu"
             >
-              {mobileMenuOpen ? (
-                <X className="h-6 w-6" />
-              ) : (
-                <Menu className="h-6 w-6" />
-              )}
+              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </Button>
           </div>
         </div>
@@ -126,32 +113,29 @@ export function Header() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <>
-          {/* Overlay */}
-          <div
-            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-40 md:hidden"
-            onClick={() => setMobileMenuOpen(false)}
-          />
-
-          {/* Menu Panel - Full Width */}
-          <div className="fixed top-[72px] left-0 right-0 bg-background/95 backdrop-blur-md border-t shadow-2xl z-40 md:hidden animate-in slide-in-from-top duration-300">
-            <nav className="flex flex-col p-6 space-y-1 max-w-lg mx-auto">
-              {navItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className={`text-left py-4 px-6 rounded-xl text-lg font-semibold transition-all duration-200 ${
-                    activeSection === item.id
-                      ? "bg-primary text-primary-foreground shadow-lg scale-105"
-                      : "hover:bg-muted/80 hover:translate-x-2"
-                  }`}
-                >
-                  {item.label}
-                </button>
-              ))}
-            </nav>
+        <div className="fixed inset-0 z-40 md:hidden">
+          <div className="absolute inset-0 bg-background/95 backdrop-blur-2xl flex flex-col items-center justify-center gap-8 p-6">
+            {navItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className={`text-3xl font-bold transition-all ${
+                  activeSection === item.id ? "text-primary" : "text-muted-foreground"
+                }`}
+              >
+                {item.label}
+              </button>
+            ))}
+            <Button 
+              variant="ghost" 
+              size="icon" 
+              className="mt-8 rounded-full h-16 w-16"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              <X className="w-8 h-8" />
+            </Button>
           </div>
-        </>
+        </div>
       )}
     </>
   );

@@ -1,63 +1,81 @@
+"use client";
+
 import { portfolioData } from "@/lib/portfolio-data";
+import { SectionHeading } from "@/components/ui/section-heading";
+import { Card, CardContent } from "@/components/ui/card";
+import { Calendar } from "lucide-react";
 
 export function ExperienceSection() {
   const experiences = portfolioData.experience;
 
   return (
-    <section id="experience" className="py-20 px-6 bg-muted/30">
-      <div className="container mx-auto max-w-2xl">
-        <h2
-          className="text-4xl md:text-5xl font-bold mb-12 text-center"
-          data-aos="fade-up"
-        >
-          Experience
-        </h2>
+    <section id="experience" className="py-24 px-6">
+      <div className="container mx-auto max-w-5xl">
+        <div data-aos="fade">
+          <SectionHeading 
+            title="Experience" 
+            description="My professional journey and the companies I've had the pleasure of working with."
+            align="left"
+          />
+        </div>
 
-        {/* Compact Timeline */}
-        <div className="relative" data-aos="fade-up" data-aos-delay="200">
-          {/* Timeline line */}
-          <div className="absolute left-[7px] top-2 bottom-2 w-[2px] bg-border" />
+        <div className="space-y-8">
+          {experiences.map((exp, index) => (
+            <div 
+              key={index} 
+              data-aos="fade" 
+              data-aos-delay={index * 100}
+            >
+              <Card className="bg-card/80 border-border hover:border-primary/50 transition-all duration-500 shadow-none rounded-3xl overflow-hidden group hover:bg-card/90">
+                <CardContent className="p-8">
+                  <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-3">
+                        <h3 className="text-2xl font-bold group-hover:text-primary transition-colors">
+                          {exp.title}
+                        </h3>
+                        {exp.current && (
+                          <span className="text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded bg-primary/10 text-primary border border-primary/20">
+                            Present
+                          </span>
+                        )}
+                      </div>
+                      <p className="text-xl text-muted-foreground font-light">
+                        {exp.company}
+                      </p>
+                    </div>
 
-          {/* Timeline items */}
-          <div className="space-y-0">
-            {experiences.map((exp, index) => (
-              <div
-                key={index}
-                className="relative flex items-start gap-6 py-3 group hover:bg-primary/5 -mx-4 px-4 rounded-lg transition-colors"
-              >
-                {/* Timeline dot */}
-                <div
-                  className={`relative z-10 mt-1.5 shrink-0 ${
-                    exp.current
-                      ? "w-4 h-4 bg-primary rounded-full ring-4 ring-background"
-                      : "w-4 h-4 bg-background border-2 border-primary rounded-full"
-                  }`}
-                />
-
-                {/* Content */}
-                <div className="flex-1 min-w-0 pt-0.5">
-                  <h3 className="text-base font-bold group-hover:text-primary transition-colors">
-                    {exp.title}
-                  </h3>
-                  {exp.company && (
-                    <p className="text-sm text-muted-foreground mt-0.5">
-                      {exp.company}
-                    </p>
-                  )}
+                    <div className="flex flex-col items-start md:items-end gap-2 text-muted-foreground/80">
+                      <div className="flex items-center gap-2 text-sm font-medium">
+                        <Calendar className="w-4 h-4" />
+                        {exp.year}
+                      </div>
+                      {/* Note: location is in personal data, but we can add placeholders if needed or just keep it clean */}
+                    </div>
+                  </div>
+                  
                   {exp.description && (
-                    <p className="text-xs text-muted-foreground mt-1">
-                      {exp.description}
-                    </p>
+                    <div className="mt-6 pt-6 border-t border-border/30">
+                      {Array.isArray(exp.description) ? (
+                        <ul className="space-y-3">
+                          {exp.description.map((item, i) => (
+                            <li key={i} className="flex gap-3 text-muted-foreground leading-relaxed font-light text-sm md:text-base">
+                              <span className="text-primary mt-1.5 shrink-0 w-1.5 h-1.5 rounded-full bg-primary/40" />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      ) : (
+                        <p className="text-muted-foreground leading-relaxed font-light">
+                          {exp.description}
+                        </p>
+                      )}
+                    </div>
                   )}
-                </div>
-
-                {/* Year */}
-                <div className="text-sm font-medium text-muted-foreground shrink-0">
-                  {exp.year}
-                </div>
-              </div>
-            ))}
-          </div>
+                </CardContent>
+              </Card>
+            </div>
+          ))}
         </div>
       </div>
     </section>

@@ -1,7 +1,10 @@
+"use client";
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { portfolioData } from "@/lib/portfolio-data";
-import { Mail, Linkedin, Github, MapPin, ExternalLink } from "lucide-react";
+import { Mail, Linkedin, Github } from "lucide-react";
+import { SectionHeading } from "@/components/ui/section-heading";
 
 export function ContactSection() {
   const contactLinks = [
@@ -10,136 +13,77 @@ export function ContactSection() {
       label: "Email",
       value: portfolioData.personal.email,
       href: `mailto:${portfolioData.personal.email}`,
-      color: "text-blue-500",
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
-      value: "Paolo G. Sibua",
+      value: "Connect with me",
       href: portfolioData.personal.linkedin,
-      color: "text-blue-700",
     },
     {
       icon: Github,
       label: "GitHub",
-      value: "code-paolo",
+      value: "View my profile",
       href: portfolioData.personal.github,
-      color: "text-gray-800 dark:text-gray-200",
-    },
-    {
-      icon: MapPin,
-      label: "Location",
-      value: portfolioData.personal.location,
-      href: null,
-      color: "text-red-500",
     },
   ];
 
   return (
     <section id="contact" className="py-24 px-6">
-      <div className="container mx-auto max-w-6xl">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h2
-            className="text-5xl md:text-6xl font-bold mb-4"
-            data-aos="fade-up"
-          >
-            Get In Touch
-          </h2>
-          <p
-            className="text-xl text-muted-foreground max-w-3xl mx-auto"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            I'm always open to new opportunities and interesting projects. Feel
-            free to reach out—let's create something amazing together!
-          </p>
+      <div className="container mx-auto max-w-5xl">
+        <div data-aos="fade">
+          <SectionHeading 
+            title="Get In Touch" 
+            description="I&apos;m always open to new opportunities and interesting projects. Feel free to reach out!"
+            align="left"
+          />
         </div>
 
-        {/* Contact Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           {contactLinks.map((contact, index) => {
             const Icon = contact.icon;
             return (
-              <Card
-                key={index}
-                className="border-2 hover:border-primary/50 transition-all hover:shadow-xl group"
-                data-aos="fade-up"
-                data-aos-delay={100 + index * 100}
+              <a 
+                key={index} 
+                href={contact.href} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                data-aos="fade"
+                data-aos-delay={index * 100}
+                className="block group"
               >
-                <CardContent className="p-8">
-                  <div className="flex items-start gap-4">
-                    <div
-                      className={`p-3 rounded-xl bg-primary/10 shrink-0 ${contact.color}`}
-                    >
+                <Card className="bg-card/80 border-border hover:border-primary/50 transition-all duration-500 shadow-none rounded-3xl overflow-hidden group-hover:bg-card/90 h-full">
+                  <CardContent className="p-8 flex flex-col items-center text-center space-y-4">
+                    <div className="p-4 rounded-2xl bg-primary/10 text-primary group-hover:scale-110 transition-transform">
                       <Icon className="w-6 h-6" />
                     </div>
-                    <div className="flex-1 min-w-0">
-                      <h3 className="font-semibold text-lg mb-1 group-hover:text-primary transition-colors">
-                        {contact.label}
-                      </h3>
-                      {contact.href ? (
-                        <a
-                          href={contact.href}
-                          target={
-                            contact.label !== "Email" ? "_blank" : undefined
-                          }
-                          rel={
-                            contact.label !== "Email"
-                              ? "noopener noreferrer"
-                              : undefined
-                          }
-                          className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 break-all"
-                        >
-                          <span>{contact.value}</span>
-                          {contact.label !== "Email" && (
-                            <ExternalLink className="w-4 h-4 shrink-0 opacity-0 group-hover:opacity-100 transition-opacity" />
-                          )}
-                        </a>
-                      ) : (
-                        <p className="text-muted-foreground">{contact.value}</p>
-                      )}
+                    <div className="space-y-1">
+                      <h3 className="font-bold text-lg">{contact.label}</h3>
+                      <p className="text-sm text-muted-foreground font-light">{contact.value}</p>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+              </a>
             );
           })}
         </div>
 
-        {/* CTA Section */}
-        <Card className="border-2 border-primary/30 bg-linear-to-br from-primary/5 to-primary/10 hover:border-primary/50 transition-all hover:shadow-xl">
-          <CardContent className="p-8 md:p-12 text-center">
-            <h3 className="text-2xl md:text-3xl font-bold mb-4">
-              Ready to collaborate?
+        <Card className="bg-foreground border-none rounded-[2rem] overflow-hidden" data-aos="fade" data-aos-delay="200">
+          <CardContent className="p-12 md:p-16 text-center text-background">
+            <h3 className="text-3xl md:text-5xl font-bold mb-6">
+              Let&apos;s build something <br className="hidden md:block" /> amazing together.
             </h3>
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Whether you have a project in mind or just want to chat about web
-              development, I'd love to hear from you. Drop me an email or
-              connect with me on LinkedIn!
+            <p className="text-background/80 text-lg md:text-xl mb-10 max-w-2xl mx-auto font-light">
+              Whether you have a specific project in mind or just want to explore possibilities, I&apos;m here to help.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-wrap items-center justify-center gap-6">
               <Button
                 asChild
                 size="lg"
-                className="text-base hover:scale-105 transition-all"
+                className="bg-background text-foreground hover:bg-background/90 rounded-full px-10 py-7 h-auto text-xl font-bold shadow-2xl transition-transform hover:scale-105"
               >
                 <a href={`mailto:${portfolioData.personal.email}`}>
-                  Send Email
-                </a>
-              </Button>
-              <Button
-                asChild
-                size="lg"
-                variant="outline"
-                className="text-base hover:scale-105 transition-all"
-              >
-                <a
-                  href={portfolioData.personal.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Connect on LinkedIn
+                  Say Hello
                 </a>
               </Button>
             </div>

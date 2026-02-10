@@ -45,7 +45,7 @@ export function ExperienceSection() {
                       </p>
                     </div>
 
-                    <div className="flex flex-col items-start md:items-end gap-2 text-muted-foreground/80">
+                    <div className="flex flex-col items-start md:items-end gap-2 text-muted-foreground">
                       <div className="flex items-center gap-2 text-sm font-medium">
                         <Calendar className="w-4 h-4" />
                         {exp.year}
@@ -55,12 +55,12 @@ export function ExperienceSection() {
                   </div>
                   
                   {exp.description && (
-                    <div className="mt-6 pt-6 border-t border-border/30">
+                    <div className="mt-6 pt-6 border-t border-border">
                       {Array.isArray(exp.description) ? (
                         <ul className="space-y-3">
                           {exp.description.map((item, i) => (
                             <li key={i} className="flex gap-3 text-muted-foreground leading-relaxed font-light text-sm md:text-base">
-                              <span className="text-primary mt-1.5 shrink-0 w-1.5 h-1.5 rounded-full bg-primary/40" />
+                              <span className="text-primary mt-1.5 shrink-0 w-1.5 h-1.5 rounded-full bg-primary" />
                               <span>{item}</span>
                             </li>
                           ))}

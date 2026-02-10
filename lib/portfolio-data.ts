@@ -13,8 +13,8 @@ export const portfolioData = {
   about: {
     summary:
       "A full-stack web developer specializing in creating innovative and user-friendly web applications. My journey into web development started with a curiosity about how websites work, and has evolved into a deep commitment to mastering both front-end and back-end technologies.",
-    experience: "3+ years coding",
-    projectsBuilt: "20+",
+    experience: "1+ year(s) coding",
+    projectsBuilt: "8+",
     principles: [
       "Clean, maintainable code",
       "Industry best practices",
@@ -224,3 +224,4 @@ export const portfolioData = {
 };
 
 export type PortfolioData = typeof portfolioData;
+

@@ -98,7 +98,6 @@ export function AboutSection() {
                 <p className="text-6xl font-bold group-hover:scale-110 transition-transform">
                   {portfolioData.about.experience}
                 </p>
-                <p className="text-xl font-semibold">Years Coding</p>
               </div>
             </CardContent>
           </Card>

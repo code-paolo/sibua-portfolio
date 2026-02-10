@@ -3,7 +3,7 @@ export const portfolioData = {
   personal: {
     name: "Paolo G. Sibua",
     role: "Full Stack Web Developer",
-    email: "paologsibua@gmail.com",
+    email: "paologsibs@gmail.com",
     github: "https://github.com/code-paolo",
     linkedin: "https://www.linkedin.com/in/paolo-sibua-268309222/",
     location:
@@ -12,7 +12,7 @@ export const portfolioData = {
 
   about: {
     summary:
-      "A full-stack web developer specializing in creating innovative and user-friendly web applications. My journey into web development started with a curiosity about how websites work, and has evolved into a deep commitment to mastering both front-end and back-end technologies.",
+      "Full-stack developer with experience building scalable web applications using React.js, Next.js, TypeScript, and Laravel. Skilled in AI integration, secure payment systems, and responsive UI/UX, delivering solutions that improve engagement and conversions.",
     experience: "1+ year(s) coding",
     projectsBuilt: "8+",
     principles: [
@@ -42,47 +42,55 @@ export const portfolioData = {
   skills: {
     frontend: [
       "HTML",
-      "React",
-      "FluxUI",
-      "Tailwind CSS",
+      "CSS",
       "JavaScript",
-      "shadcn/ui",
       "TypeScript",
+      "React.js",
+      "Vue.js",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "FluxUI",
     ],
-    backend: ["Node.js", "Firebase", "MongoDB", "Express", "MySQL", "PHP"],
-    fullstack: ["Laravel", "Next.js"],
-    tools: ["VSCode", "GitHub", "Postman"],
+    backend: [
+      "Node.js",
+      "PHP",
+      "Laravel",
+      "Express",
+      "Firebase",
+      "MongoDB",
+      "MySQL",
+      "PostgreSQL",
+    ],
+    fullstack: ["Next.js", "Laravel"],
+    tools: ["Git", "GitHub", "GitLab", "VS Code", "Postman", "Docker"],
   },
 
   projects: [
     {
       title: "TBPillPal",
-      subtitle: "Tuberculosis Admin Dashboard",
-
+      subtitle: "Tuberculosis Companion",
       problem:
-        "Baliwag RHU struggled with manual, paper-based TB patient monitoring, leading to delayed interventions and low medication adherence rates.",
+        "Baliwag RHU relied on manual TB monitoring workflows, making patient tracking and follow-ups harder to manage.",
       solution:
-        "Developed a comprehensive admin dashboard with automated patient tracking, real-time notifications, AI-powered test analysis, and gamification features.",
+        "Developed and deployed TBPillPal to streamline TB treatment management through digital patient tracking, real-time notifications, and role-specific dashboards.",
       impact: [
-        "Built complete digital patient monitoring system to replace paper-based tracking",
-        "Automated compliance tracking and notification system for healthcare workers",
-        "Implemented gamification features designed to improve medication adherence",
-        "Integrated AI-powered test result analysis for faster medical summaries",
+        "Improved monitoring of medication adherence and patient follow-ups",
+        "Enabled healthcare staff to work from a centralized dashboard",
+        "Introduced gamified adherence features to encourage consistent medication intake",
+        "Implemented AI-based result summarization for faster interpretation",
       ],
       highlights: [
-        "Real-time patient monitoring with automated compliance tracking",
-        "AI integration for instant test result analysis and summaries",
-        "Gamification system with rewards and progress tracking",
-        "Automated reporting dashboard for healthcare workers",
+        "Real-time notifications and monitoring dashboards",
+        "Gamified adherence feature for improved patient participation",
+        "AI-based test result summarization",
+        "Built and deployed for Baliwag Rural Health Unit",
       ],
       metrics: [
-        { label: "Features Built", value: "25+" },
+        { label: "Features Built", value: "20+" },
         { label: "Tech Stack", value: "5" },
         { label: "Project Duration", value: "6mo" },
       ],
       technologies: [
-        "HTML",
-        "Express",
         "Firebase",
         "Tailwind CSS",
         "shadcn/ui",
@@ -96,20 +104,20 @@ export const portfolioData = {
       title: "BookTix",
       subtitle: "Modern Movie Ticket Booking Platform",
       problem:
-        "Movie-goers need a streamlined, user-friendly platform to discover films, compare showtimes, and purchase tickets without friction.",
+        "Users needed a faster, simpler movie booking flow with better discovery and checkout reliability.",
       solution:
-        "A full-stack MVP web application featuring advanced search and filtering, shopping cart management, a Groq-powered AI concierge for instant assistance, secure Stripe payment processing, and automated email receipt delivery.",
+        "Built a full-stack MVP with advanced search/filtering, Groq-powered AI assistance, and secure Stripe payment flow.",
       impact: [
-        "Streamlined the ticket purchasing workflow from browse to checkout in under 3 minutes",
-        "Delivered a fully responsive, accessible UI with dark/light theme support",
-        "Integrated secure payment processing with email confirmation and AI-assisted check-in guidance",
-        "Built reusable component library following single responsibility principles for scalable development",
+        "Reduced booking friction with faster movie discovery and checkout",
+        "Improved customer support with instant AI chatbot responses",
+        "Minimized payment errors through secure Stripe integration",
+        "Increased booking completion and successful transactions",
       ],
       highlights: [
-        "AI-Powered Chatbot Assistant - Groq-powered conversational AI providing real-time help and movie recommendations",
-        "Advanced Movie Search & Filtering - Real-time search with genre filtering and URL-based state for shareable results",
-        "Secure Stripe Payment Integration - End-to-end encrypted checkout with automated email receipts",
-        "Multi-Theme System - 7 customizable themes with persistent storage and dark/light mode support",
+        "Advanced movie search and filtering",
+        "Groq-powered AI chatbot assistant",
+        "Secure Stripe payment gateway",
+        "Automated transaction confirmations",
       ],
       metrics: [
         { label: "Features Built", value: "15+" },
@@ -122,12 +130,8 @@ export const portfolioData = {
         "Tailwind CSS",
         "shadcn/ui",
         "Zustand",
-        "MongoDB",
-        "Prisma",
+        "Groq AI",
         "Stripe API",
-        "Groq API",
-        "Vite",
-        "Node.js",
       ],
       githubUrl: "https://github.com/code-paolo/movie-ticketing-system",
       liveUrl: "https://movie-ticketing-system-tau.vercel.app/",
@@ -136,22 +140,20 @@ export const portfolioData = {
       title: "Beati Cafe",
       subtitle: "Modern Cafe Web Application",
       problem:
-        "Traditional cafe ordering systems lack intelligent customer support and streamlined menu navigation, leading to longer decision times, increased staff workload, and missed opportunities for personalized recommendations.",
+        "Cafe ordering needed better product discovery, streamlined cart flow, and faster customer support.",
       solution:
-        "Built a full-stack Next.js web application with AI-powered customer assistance, advanced multi-category filtering, secure authentication system, and intelligent cart management to transform the digital cafe ordering experience.",
+        "Built a full-stack e-commerce cafe platform with advanced filtering, secure authentication, and AI-assisted support.",
       impact: [
-        "Engineered AI-powered chatbot with Groq API achieving <3 second response times for instant menu recommendations, dietary queries, and location information, significantly reducing customer support burden",
-        "Developed sophisticated filtering system with multi-category selection and real-time search, enabling customers to discover menu items 60% faster than traditional linear browsing",
-        "Architected secure authentication flow with Zod schema validation and react-hook-form, implementing GDPR-compliant privacy controls and form error handling that reduced invalid submissions by 85%",
-        "Built intelligent cart management system with authentication guards, real-time stock validation, and contextual notifications, minimizing order errors and streamlining the checkout process",
-        "Designed fully responsive UI with modern design patterns and accessibility standards, ensuring seamless experience across all device sizes and improving mobile conversion rates",
+        "Improved product discovery through advanced filtering",
+        "Streamlined checkout using better cart management flows",
+        "Enhanced engagement with Groq AI chatbot support",
+        "Reduced input errors with strong form validation",
       ],
       highlights: [
-        "Groq AI Chatbot Integration - Context-aware conversational AI providing instant assistance with menu recommendations, dietary options, allergen information, and store details",
-        "Advanced Multi-Category Filtering - Dynamic search and filter system with real-time updates and persistent URL state for seamless menu navigation",
-        "Enterprise-Grade Authentication - Secure user authentication with comprehensive form validation using Zod and react-hook-form, ensuring data integrity and privacy compliance",
-        "Smart Cart System - Intelligent cart management with authentication guards, quantity validation, and status-based notifications to prevent user errors",
-        "Modern Tech Stack - Built with Next.js 14, TypeScript, Tailwind CSS, and shadcn/ui for optimal performance, type safety, and maintainable code architecture",
+        "Groq AI chatbot for menu recommendations and inquiries",
+        "Advanced filtering and cart management",
+        "Secure authentication using Zod and React Hook Form",
+        "Responsive full-stack Next.js implementation",
       ],
       metrics: [
         { label: "AI Response Time", value: "<3s" },
@@ -160,9 +162,9 @@ export const portfolioData = {
         { label: "Tech Stack", value: "8 tools" },
       ],
       technologies: [
+        "Next.js",
         "React",
         "TypeScript",
-        "Next.js",
         "Tailwind CSS",
         "shadcn/ui",
         "Groq AI",
@@ -176,52 +178,35 @@ export const portfolioData = {
 
   experience: [
     {
-      year: "2021",
-      title: "Started College",
-      company: "FEU Institute of Technology",
-    },
-    {
-      year: "2021",
-      title: "Hello World! 👋",
-      company: "Wrote my first line of code",
-    },
-    {
-      year: "2021",
-      title: "Transferred to another university",
-      company: "National University - Baliwag",
+      year: "Dec 2025 - Mar 2026",
+      title: "App Developer",
+      company: "Coral System Technologies Inc.",
+      current: true,
       description:
-        "Bachelor of Information Technology with Specialization in Mobile and Web Application",
-    },
-    {
-      year: "Nov 2024 - Mar 2025",
-      title: "IT Operations Intern",
-      company: "Concentrix Cyberwest",
-      description:
-        "Technical support, IT systems administration, and asset management",
+        "Developed real-time features with Laravel Broadcasting, Echo, and Reverb in Docker; contributed to HRIS modules; implemented multitenant RBAC; wrote Laravel Pest tests; and delivered 20+ pull requests through GitLab workflows.",
     },
     {
       year: "Apr 2025 - Jul 2025",
-      title: "WordPress Web Development Intern",
+      title: "WordPress Website Development Intern",
       company: "Knowles Training Institute",
       description:
-        "Website design, content optimization, SEO, and responsive UX",
+        "Designed and maintained user-friendly pages, optimized content and metadata for SEO, and improved navigation, accessibility, and responsiveness.",
     },
     {
-      year: "Aug 2025",
-      title: "Graduated",
-      company: "National University - Baliwag",
+      year: "Nov 2024 - Mar 2025",
+      title: "Information Technology Operations Intern",
+      company: "Concentrix Cyberwest",
       description:
-        "Bachelor of Information Technology with Specialization in Mobile and Web Application",
+        "Provided technical support for hardware, software, and network issues while administering IT systems and user accounts.",
     },
     {
-      year: "2025+",
-      title: "Building Professional Projects",
-      company: "Freelance & Personal",
-      current: true,
-      description: "Full-stack development with modern technologies",
+      year: "Sep 2024 - Dec 2024",
+      title: "Software Development Lead",
+      company: "Google Developer Student Club - National University - Baliwag",
+      description:
+        "Led project planning, clarified requirements, facilitated planning meetings, and coordinated faculty/student collaboration.",
     },
   ],
 };
 
 export type PortfolioData = typeof portfolioData;
-
